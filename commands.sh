@@ -4,8 +4,6 @@ repo="/home/isucon/isucon-template"
 app_service="isucon.go"
 
 function deploy() {
-  sync "$@"
-
   # WARN: .gitkeep is also added to /.gitkeep
   find "$repo/config/all" -type f | while read -r src; do
     dst="/${src#$repo/config/all}"
