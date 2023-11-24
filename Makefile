@@ -5,7 +5,7 @@ CONFIG_FILES := /etc/mysql/mysql.conf.d/mysqld.cnf \
 				/lib/systemd/system/nginx.service \
 				/lib/systemd/system/mysql.service \
 				/etc/nginx/sites-available/isucon.conf \
-                /etc/systemd/system/isucon.service
+				/etc/systemd/system/isucon.service
 WEBAPP_DIR := /home/isucon/webapp
 
 ### その他の変数 ###
@@ -37,7 +37,7 @@ install-go:
 	@if ! which go > /dev/null 2>&1; then \
 		echo "Install Go"; \
 		cd /tmp && wget https://go.dev/dl/go$(GO_VERSION).linux-amd64.tar.gz \
-			&& sudo tar -C /usr/local xf go$(GO_VERSION).linux-amd64.tar.gz; \
+			&& sudo tar -C /usr/local -xf go$(GO_VERSION).linux-amd64.tar.gz; \
 	fi
 
 .PHONY: install-alp
