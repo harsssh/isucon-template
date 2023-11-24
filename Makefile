@@ -80,9 +80,9 @@ webapp: $(WEBAPP_DIR)
 webapp-ignore: webapp
 	@echo "Ignore some files/directories in webapp"
 	@for lang in $(IGNORE_IMPL_LANG); do \
-  		find webapp -name "*$$lang*" >> webapp/.gitignore; \
+  		echo webapp/*$$lang* | tr ' ' '\n' >> .gitignore; \
 	done
-	@find webapp -size +100M >> webapp/.gitignore
+	@find webapp -size +10M >> .gitignore
 
 # /etc/path/to/config -> config/all/etc/path/to/config
 .PHONY: gather-config
