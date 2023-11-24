@@ -29,7 +29,7 @@ function deploy() {
     sudo systemctl restart {nginx,mysql,"$app_service"}
   fi
 
-  sudo sysctl -p /etc/sysctl.d/99-isucon.conf
+  sudo sysctl -q -p /etc/sysctl.d/99-isucon.conf
 }
 
 function sync() {
